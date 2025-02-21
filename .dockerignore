@@ -1,0 +1,12 @@
+node_modules
+**/target
+/.idea
+.cargo/
+xtask/
+README.md
+.gitignore
+.git/
+.github/
+docker
+Dockerfile
+audit.toml
