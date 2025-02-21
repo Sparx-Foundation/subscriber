@@ -3,10 +3,10 @@ use std::sync::Arc;
 use tracing::{info, trace};
 
 mod app_state;
+mod config;
 mod db_setup;
 mod routes;
 mod utility;
-mod config;
 
 use crate::app_state::AppState;
 
@@ -25,17 +25,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     run().await
 }
 
-
-
 async fn run() -> Result<(), Box<dyn std::error::Error>> {
     info!("Starting Server Backend");
 
     let state = Arc::new(AppState::new().await?);
     trace!("App State created!");
 
-    let listener = tokio::net::TcpListener::bind(format!("{}", &state.config.server)).await?;
+    let listener =
+        tokio::net::TcpListener::bind(format!("0.0.0.0:{}", &state.config.server_port)).await?;
 
-    info!("Server Listening on:  {}", &state.config.server);
+    info!("Server Listening on:  {}", &state.config.server_port);
 
     let app = configure_routes(state);
 
@@ -43,4 +42,3 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
-

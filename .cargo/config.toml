@@ -1,0 +1,2 @@
+[alias]
+migration = "run --manifest-path ./migration/Cargo.toml --"

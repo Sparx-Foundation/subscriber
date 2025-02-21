@@ -1,6 +1,5 @@
 use crate::db_setup::setup_db;
-use lettre::transport::smtp::authentication::Credentials;
-use lettre::SmtpTransport;
+use lettre::{transport::smtp::authentication::Credentials, SmtpTransport};
 use sea_orm::DatabaseConnection;
 use tracing::info;
 

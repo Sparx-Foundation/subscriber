@@ -1,5 +1,5 @@
 [package]
-name = "noctilux"
+name = "subscriber"
 version = "0.1.0"
 edition = "2021"
 license-file = "LICENSE-AGPL-3.0"
@@ -7,6 +7,9 @@ readme = "README.md"
 description = "noctilux backend server"
 repository = "https://github.com/Bundesware-WTF/noctilux-backend"
 homepage = "https://github.com/Bundesware-WTF"
+
+[workspace]
+members = [".", "entity", "migration"]
 
 [dependencies]
 migration = { path = "./migration" }
@@ -16,12 +19,11 @@ tokio = { version = "1.43.0", features = ["rt", "rt-multi-thread", "macros"] }
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 tracing = "0.1.41"
 sea-orm = { version = "1.1.5", features = ["sqlx-postgres", "macros", "runtime-tokio-rustls"] }
-
+serde = { version = "1.0.218", features = [] }
 axum = { version = "0.8.1", features = ["tokio", "tracing","macros"] }
 tower-http = { version = "0.6.1", features = ["tracing", "tokio", "timeout", "cors", "trace"] }
 http = "1.2.0"
 human-panic = { version = "2.0.2", features = ["color"] }
-
 dotenvy = "0.15.7"
 lettre = { version = "0.11.13", default-features = false, features = ["builder", "smtp-transport", "tracing", "tokio1-rustls-tls", "tokio1", "serde"] }
 thiserror = "2.0.11"

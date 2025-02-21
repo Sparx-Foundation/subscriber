@@ -19,7 +19,12 @@ impl MigrationTrait for Migration {
                             .primary_key(),
                     )
                     .col(string(EmailSubscriber::Name))
-                    .col(ColumnDef::new(EmailSubscriber::Email).string().unique_key().not_null())
+                    .col(
+                        ColumnDef::new(EmailSubscriber::Email)
+                            .string()
+                            .unique_key()
+                            .not_null(),
+                    )
                     .to_owned(),
             )
             .await

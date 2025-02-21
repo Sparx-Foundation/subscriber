@@ -796,6 +796,9 @@ checksum = "e079f19b08ca6239f47f8ba8509c11cf3ea30095831f7fed61441475edd8c449"
 [[package]]
 name = "entity"
 version = "0.1.0"
+dependencies = [
+ "sea-orm",
+]
 
 [[package]]
 name = "equivalent"
@@ -1622,25 +1625,6 @@ dependencies = [
  "libc",
  "wasi 0.11.0+wasi-snapshot-preview1",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "noctilux"
-version = "0.1.0"
-dependencies = [
- "axum",
- "dotenvy",
- "entity",
- "http",
- "human-panic",
- "lettre",
- "migration",
- "sea-orm",
- "thiserror 2.0.11",
- "tokio",
- "tower-http",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
@@ -2851,6 +2835,26 @@ name = "strum"
 version = "0.26.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8fec0f0aef304996cf250b31b5a10dee7980c85da9d759361292b8bca5a18f06"
+
+[[package]]
+name = "subscriber"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "dotenvy",
+ "entity",
+ "http",
+ "human-panic",
+ "lettre",
+ "migration",
+ "sea-orm",
+ "serde",
+ "thiserror 2.0.11",
+ "tokio",
+ "tower-http",
+ "tracing",
+ "tracing-subscriber",
+]
 
 [[package]]
 name = "subtle"
