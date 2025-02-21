@@ -13,7 +13,7 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     env:
-      ORGA_NAME: 'Sparx-Foundation'
+      ORGA_NAME: 'sparx-foundation'
       REPO_NAME: 'subscriber'
 
     steps:
