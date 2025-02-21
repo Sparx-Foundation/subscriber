@@ -2,7 +2,7 @@ use crate::app_state::AppState;
 use axum::{extract::State, Json};
 use http::StatusCode;
 use lettre::{message::header::ContentType, message::Mailbox, Address, Message, Transport};
-use sea_orm::{ActiveModelTrait, ColumnTrait,ActiveValue::Set, EntityTrait, QueryFilter};
+use sea_orm::{ActiveModelTrait, ActiveValue::Set, ColumnTrait, EntityTrait, QueryFilter};
 use serde::Deserialize;
 use std::sync::Arc;
 use tracing::{debug, error};

@@ -1,7 +1,11 @@
 use crate::app_state::AppState;
 use axum::{routing::post, Router};
 use std::{sync::Arc, time::Duration};
-use tower_http::{cors::{AllowOrigin, CorsLayer}, timeout::TimeoutLayer, trace::TraceLayer};
+use tower_http::{
+    cors::{AllowOrigin, CorsLayer},
+    timeout::TimeoutLayer,
+    trace::TraceLayer,
+};
 
 use tracing::info;
 
