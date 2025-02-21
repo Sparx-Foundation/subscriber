@@ -21,7 +21,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /subscriber/target/release/subscriber /usr/local/bin/subscriber
-COPY --from=builder /subscriber/config/release.toml /usr/local/bin/config/release.toml
 
 EXPOSE 8888
 
